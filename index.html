@@ -17,8 +17,8 @@
 <script src="js/html5.js"></script>
 <![endif]-->
 
-<!-- Cookie Consent by https://www.FreePrivacyPolicy.com -->
-<script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/3.1.0/cookie-consent.js"></script>
+
+<!-- <script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/3.1.0/cookie-consent.js"></script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function () {
 cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","palette":"dark","language":"en","website_name":"matchstickpuzzle.com","cookies_policy_url":"https://matchstickpuzzle.com/cookies-policy.html"});
@@ -26,9 +26,8 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
 </script>
 
 <noscript>Cookie Consent by <a href="https://www.FreePrivacyPolicy.com/free-cookie-consent/" rel="nofollow noopener">FreePrivacyPolicy.com</a></noscript>
-<!-- End Cookie Consent -->
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
+
 <script type="text/plain" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-JGBKP5CBJE"></script>
 <script type="text/plain" cookie-consent="tracking">
   window.dataLayer = window.dataLayer || [];
@@ -41,7 +40,23 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
   });
 
   gtag('config', 'G-JGBKP5CBJE');
-</script>
+</script> -->
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JGBKP5CBJE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // gtag('consent', 'default', {
+  // 'ad_storage': 'denied',
+  // 'analytics_storage': 'denied'
+  // });
+
+  //gtag('config', 'G-JGBKP5CBJE', { 'anonymize_ip': true, client_storage: 'none' });
+   gtag('config', 'G-JGBKP5CBJE');
+</script> -->
 
 </head>
 <body data-spy="scroll">
@@ -206,5 +221,23 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
 <script src="fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
 <script src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 <script src="js/init.js"></script>
+
+<!-- (function() {
+	if (!localStorage.getItem('cookieconsent')) {
+		document.body.innerHTML += '\
+		<div class="cookieconsent" style="position:fixed;padding:20px;left:0;bottom:0;background-color:#000;color:#FFF;text-align:center;width:100%;z-index:99999;">
+      We use cookies and other tracking technologies to improve your browsing experience on our website, to show you personalized content and targeted ads,
+        to analyze our website traffic, and to understand where our visitors are coming from.<br>By continuing to use this website, you agree to their use. 
+			<a href="#" style="color:#CCCCCC;">I Understand</a>
+		</div>
+		';
+		document.querySelector('.cookieconsent a').onclick = function(e) {
+			e.preventDefault();
+			document.querySelector('.cookieconsent').style.display = 'none';
+			localStorage.setItem('cookieconsent', true);
+		};
+	}
+})(); -->
+
 </body>
 </html>
