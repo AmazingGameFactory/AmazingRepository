@@ -44,7 +44,8 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGBKP5CBJE"></script>
-<script>
+
+<!-- <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -57,6 +58,44 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
   gtag('config', 'G-JGBKP5CBJE', { 'anonymize_ip': true, client_storage: 'none', client_id: CLIENT_ID });
   //gtag('config', 'G-JGBKP5CBJE');
 </script> -->
+
+<script>
+  // https://developers.google.com/tag-manager/devguide
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag('js', new Date())
+
+  // defines window.localstorage key
+  const GA_LOCAL_STORAGE_KEY = 'ga:clientId'
+
+  // checks if localstorage is available
+  if (window.localStorage) {
+    // checks if user was already connected and loads client_id from localstorage
+    if (localStorage.getItem(GA_LOCAL_STORAGE_KEY)) {
+      // creates new tracker with same client_id as the last time the user visited
+      gtag('js', new Date())
+      gtag('config', 'G-JGBKP5CBJE', {
+        anonymize_ip: true,
+        send_page_view: true,
+        client_storage: 'none',
+        client_id: localStorage.getItem(GA_LOCAL_STORAGE_KEY),
+      })
+    } else {
+      // creates client_id and saves it in localStorage -> currently random number better would be a uuid
+      window.localStorage.setItem(GA_LOCAL_STORAGE_KEY, uuidv4())
+      // creates new tracker with the new client_id
+      gtag('js', new Date())
+      gtag('config', 'G-JGBKP5CBJE', {
+        anonymize_ip: true,
+        send_page_view: true,
+        client_storage: 'none',
+        client_id: localStorage.getItem(GA_LOCAL_STORAGE_KEY),
+      })
+    }
+  }
+</script>
 
 </head>
 <body data-spy="scroll">
