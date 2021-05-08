@@ -89,7 +89,8 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
       // creates client_id and saves it in localStorage -> currently random number better would be a uuid
       // import { v4 as uuidv4 } from 'uuid';
       //window.localStorage.setItem(GA_LOCAL_STORAGE_KEY, uuidv4())
-      window.localStorage.setItem(GA_LOCAL_STORAGE_KEY, uuid.v4())
+      const { v4: uuidv4 } = require('uuid');
+      window.localStorage.setItem(GA_LOCAL_STORAGE_KEY, uuidv4())
       // creates new tracker with the new client_id
       gtag('js', new Date())
       gtag('config', 'G-JGBKP5CBJE', {
