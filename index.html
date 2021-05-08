@@ -46,7 +46,7 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGBKP5CBJE"></script>
-<script async src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+<!-- <script async src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script> -->
 
 <!-- <script>
   window.dataLayer = window.dataLayer || [];
@@ -89,8 +89,8 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
       // creates client_id and saves it in localStorage -> currently random number better would be a uuid
       // import { v4 as uuidv4 } from 'uuid';
       //window.localStorage.setItem(GA_LOCAL_STORAGE_KEY, uuidv4())
-      const { v4: uuidv4 } = require('uuid');
-      window.localStorage.setItem(GA_LOCAL_STORAGE_KEY, uuidv4())
+
+      window.localStorage.setItem(GA_LOCAL_STORAGE_KEY, (new Date()).getTime().toString(36) + Math.random().toString(36).slice(2))
       // creates new tracker with the new client_id
       gtag('js', new Date())
       gtag('config', 'G-JGBKP5CBJE', {
