@@ -72,6 +72,7 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
 
   // defines window.localstorage key
   const GA_LOCAL_STORAGE_KEY = 'ga:clientId'
+  import { v4 as uuidv4 } from 'uuid';
 
   // checks if localstorage is available
   if (window.localStorage) {
