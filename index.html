@@ -72,7 +72,6 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
 
   // defines window.localstorage key
   const GA_LOCAL_STORAGE_KEY = 'ga:clientId'
-  import { v4 as uuidv4 } from 'uuid';
 
   // checks if localstorage is available
   if (window.localStorage) {
@@ -88,7 +87,9 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
       })
     } else {
       // creates client_id and saves it in localStorage -> currently random number better would be a uuid
-      window.localStorage.setItem(GA_LOCAL_STORAGE_KEY, uuidv4())
+      // import { v4 as uuidv4 } from 'uuid';
+      //window.localStorage.setItem(GA_LOCAL_STORAGE_KEY, uuidv4())
+      window.localStorage.setItem(GA_LOCAL_STORAGE_KEY, uuid.v4())
       // creates new tracker with the new client_id
       gtag('js', new Date())
       gtag('config', 'G-JGBKP5CBJE', {
